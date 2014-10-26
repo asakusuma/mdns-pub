@@ -1,6 +1,6 @@
 {
   "name": "mdns-pub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Asa Kusuma",
   "description": "Publish mdns events via bonjour or avahi, depending on the platform",
   "contributors": [
