@@ -1,0 +1,26 @@
+{
+  "name": "mdns-pub",
+  "version": "0.0.1",
+  "author": "Asa Kusuma",
+  "description": "Publish mdns events via bonjour or avahi, depending on the platform",
+  "contributors": [
+    {
+      "name": "Asa Kusuma",
+      "email": "asa.kusuma@gmail.com"
+    }
+  ],
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asakusuma/mdns-pub.git"
+  },
+  "dependencies": {
+    "mdns": "*",
+    "lodash": "*"
+  },
+  "license": "MIT",
+  "main": "index.js"
+}
