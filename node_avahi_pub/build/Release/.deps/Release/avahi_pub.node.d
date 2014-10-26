@@ -1,0 +1,1 @@
+cmd_Release/avahi_pub.node := ./gyp-mac-tool flock ./Release/linker.lock c++ -bundle -Wl,-search_paths_first -mmacosx-version-min=10.5 -arch x86_64 -L./Release  -o Release/avahi_pub.node Release/obj.target/avahi_pub/lib/avahi_pub.o -undefined dynamic_lookup

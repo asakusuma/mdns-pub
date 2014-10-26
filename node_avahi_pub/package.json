@@ -1,0 +1,20 @@
+{
+  "name": "avahi_pub",
+  "version": "0.1.1",
+  "description": "",
+  "main": "avahi_pub.coffee",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  }
+  , "dependencies": {
+    "bindings": "*",
+    "coffee-script": "*"
+  },
+  "author": "D1plo1d",
+  "license": "MIT",
+  "gypfile": true
+}
