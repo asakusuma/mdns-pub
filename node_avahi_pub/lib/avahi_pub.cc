@@ -43,6 +43,7 @@ extern "C" {
 #include <avahi-common/malloc.h>
 #include <avahi-common/error.h>
 #include <avahi-common/timeval.h>
+#include "txt_record_ref.hpp"
 
 static AvahiSimplePoll *simple_poll = NULL;
 
@@ -318,9 +319,11 @@ Handle<Value> NodeAvahiPubService::New(const Arguments& args) {
   v8::String::Utf8Value * type = new v8::String::Utf8Value(
     v8::Handle<v8::String>::Cast( opts->Get(String::NewSymbol("type")) )
   );
-  v8::String::Utf8Value * data = new v8::String::Utf8Value(
-    v8::Handle<v8::String>::Cast( opts->Get(String::NewSymbol("data")) )
-  );
+
+  const void * txtRecord(NULL);
+  TxtRecordRef * ref = ObjectWrap::Unwrap<TxtRecordRef>(opts->Get(String::NewSymbol("data")->ToObject());
+  txtRecord = TXTRecordGetBytesPtr( & ref->GetTxtRecordRef());
+
   int port =
     v8::Handle<v8::Integer>::Cast( opts->Get(String::NewSymbol("port")) )->Value();
 
@@ -330,7 +333,7 @@ Handle<Value> NodeAvahiPubService::New(const Arguments& args) {
 
   serviceInfo->name = *(*name);
   serviceInfo->type = *(*type);
-  serviceInfo->data = *(*data);
+  serviceInfo->data = *(*txtRecord);
   serviceInfo->port = port;
   serviceInfo->group = NULL;
 
